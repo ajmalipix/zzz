@@ -1,0 +1,17 @@
+name: = Super-Linter
+
+on: push
+
+jobs:
+  super-linter:
+    name: set code base
+    runs-on: ubuntu-leatest
+    steps:
+      - name: checkout code
+        uses: action/checkout@v2
+
+      - name: Run Set-Up
+        uses: github/set-up@v3
+        env:
+          DEFAULT_BRANCH: main
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
